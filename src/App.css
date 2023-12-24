@@ -33,6 +33,27 @@
   transition: background-color 0.3s ease;
 }
 
+.detail-button, .delete-button, .edit-button {
+  display: block; 
+  width: calc(100% - 20px); 
+  margin: 8px 10px; 
+}
+
+.detail-button, .delete-button, .edit-button:hover {
+  opacity: 0.8;
+}
+
+.add-boat-button, .show-colors-button {
+  background-color: green; 
+  color: white;
+  margin-bottom: 20px; 
+}
+
+.show-colors-button {
+  background-color: purple; 
+  margin-bottom: 30px; 
+}
+
 .detail-button {
   background-color: blue;
   color: white;
@@ -43,18 +64,7 @@
   color: white;
 }
 
-.detail-button, .delete-button {
-  display: block; 
-  width: calc(100% - 20px); 
-  margin: 8px 10px; 
-}
-
-.detail-button:hover, .delete-button:hover {
-  opacity: 0.8;
-}
-
-.add-boat-button {
-  background-color: green; 
+.edit-button {
+  background-color: rgb(1, 98, 77); 
   color: white;
-  margin-bottom: 20px; 
 }
