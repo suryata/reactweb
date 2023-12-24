@@ -33,13 +33,13 @@
   transition: background-color 0.3s ease;
 }
 
-.detail-button, .delete-button, .edit-button {
+.detail-button, .delete-button, .edit-button, .sailing-button {
   display: block; 
   width: calc(100% - 20px); 
   margin: 8px 10px; 
 }
 
-.detail-button, .delete-button, .edit-button:hover {
+.detail-button:hover, .delete-button:hover, .edit-button:hover, .sailing-button:hover {
   opacity: 0.8;
 }
 
@@ -66,5 +66,10 @@
 
 .edit-button {
   background-color: rgb(1, 98, 77); 
+  color: white;
+}
+
+.sailing-button {
+  background-color: navy; 
   color: white;
 }

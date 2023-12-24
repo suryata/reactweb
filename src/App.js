@@ -14,6 +14,22 @@ function App() {
   const [showColorsModal, setShowColorsModal] = useState(false);
   const [boatColors, setBoatColors] = useState([]);
 
+  const toggleSailingStatus = async (id, currentStatus) => {
+    try {
+      await fetch(`https://oprec-betis-be.up.railway.app/perahu/${id}/berlayar`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YzFiN2MzYi1lYjc2LTQ0NTgtYTliOS02MzZiZWM2NDg1NmIiLCJpZCI6IjljMWI3YzNiLWViNzYtNDQ1OC1hOWI5LTYzNmJlYzY0ODU2YiIsInVzZXJuYW1lIjoic3VyeWF0YSIsImlhdCI6MTcwMzQyNjQzOSwiZXhwIjoxNzA2MDE4NDM5fQ.WJz3d1L6_mA2pcgGu4A4Xr-jQsLll9p53xryQXl1C5c'}`
+        },
+        body: JSON.stringify({ is_sailing: !currentStatus })
+      });
+      fetchBoats();
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   const fetchBoatColors = async () => {
     try {
       const response = await fetch('https://oprec-betis-be.up.railway.app/perahu/warna', {
@@ -111,6 +127,9 @@ function App() {
               <Link to={`/detail/${boat.id}`} className="button detail-button">Detail</Link>
               <button onClick={() => deleteBoat(boat.id)} className="button delete-button">Delete</button>
               <button onClick={() => toggleEditModal(boat)} className="button edit-button">Edit</button>
+              <button onClick={() => toggleSailingStatus(boat.id, boat.is_sailing)} className="button sailing-button">
+              {boat.is_sailing ? 'Stop Berlayar' : 'Mulai Berlayar'}
+              </button>
             </div>
           ))}
         </div>
