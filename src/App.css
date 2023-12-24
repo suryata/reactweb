@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.boat-cards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #ffe7d1;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  text-decoration: none;
+  padding: 10px 0; 
+  width: 100%; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 8px; 
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.detail-button {
+  background-color: blue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.delete-button {
+  background-color: red;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.detail-button, .delete-button {
+  display: block; 
+  width: calc(100% - 20px); 
+  margin: 8px 10px; 
+}
+
+.detail-button:hover, .delete-button:hover {
+  opacity: 0.8;
+}
+
+.add-boat-button {
+  background-color: green; 
+  color: white;
+  margin-bottom: 20px; 
 }
