@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './buyboat.css';
 
 const colors = [
  "RED",
@@ -52,7 +53,6 @@ const BuyBoat = ({ closeModal }) => {
         throw new Error(responseData.message || 'Error when making a POST request');
       }
 
-      // If post is successful, log the response and close the modal
       const responseData = await response.json();
       console.log('Success:', responseData);
       closeModal();
